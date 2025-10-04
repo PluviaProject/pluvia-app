@@ -7,11 +7,11 @@ import {
   WeatherResult
 } from '@/services/weather.service';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 
 const weatherService = createWeatherService();
 
-export default function ResultPage() {
+function ResultPage() {
   const router = useRouter();
   const params = useSearchParams();
 
@@ -139,5 +139,15 @@ export default function ResultPage() {
         )}
       </div>
     </main>
+  );
+}
+
+export default function ResultPageWrapper() {
+  return (
+    <Suspense
+      fallback={<div className="text-gray-400 p-8 text-center">Loading...</div>}
+    >
+      <ResultPage />
+    </Suspense>
   );
 }

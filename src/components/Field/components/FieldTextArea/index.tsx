@@ -2,7 +2,7 @@ import {
   ForwardedRef,
   TextareaHTMLAttributes,
   forwardRef,
-  useState,
+  useState
 } from 'react';
 import { twMerge } from 'tailwind-merge';
 
@@ -52,5 +52,7 @@ const FieldTextArea = forwardRef(
     );
   }
 );
+
+FieldTextArea.displayName = 'FieldTextArea';
 
 export default FieldTextArea;
