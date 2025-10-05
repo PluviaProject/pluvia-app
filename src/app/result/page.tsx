@@ -72,7 +72,7 @@ function ResultPage() {
               <div className="flex flex-col items-center">
                 <span className="text-4xl mb-2">🌡️</span>
                 <p className="text-2xl font-semibold text-white">
-                  {weather.temporalAverage.temperature}°C
+                  {weather.temperature}°C
                 </p>
                 <p className="text-sm text-gray-400">Temperature</p>
               </div>
@@ -80,7 +80,7 @@ function ResultPage() {
               <div className="flex flex-col items-center">
                 <span className="text-4xl mb-2">💨</span>
                 <p className="text-2xl font-semibold text-white">
-                  {weather.temporalAverage.windSpeed} km/h
+                  {weather.windSpeed} km/h
                 </p>
                 <p className="text-sm text-gray-400">Wind Speed</p>
               </div>
@@ -88,7 +88,7 @@ function ResultPage() {
               <div className="flex flex-col items-center">
                 <span className="text-4xl mb-2">🌧️</span>
                 <p className="text-2xl font-semibold text-white">
-                  {weather.temporalAverage.precipitationPercentage}%
+                  {weather.precipitationPercentage}%
                 </p>
                 <p className="text-sm text-gray-400">Chance of Rain</p>
               </div>

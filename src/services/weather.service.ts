@@ -11,16 +11,9 @@ export interface WeatherDto {
 }
 
 export interface WeatherResult {
-  temporalAverage: {
-    temperature: number;
-    windSpeed: number;
-    precipitationPercentage: number;
-  };
-  projectionAverage: {
-    temperature: number;
-    windSpeed: number;
-    precipitationPercentage: number;
-  };
+  temperature: number;
+  windSpeed: number;
+  precipitationPercentage: number;
   description: string;
   insights: string[];
 }
@@ -28,23 +21,15 @@ export interface WeatherResult {
 export const createWeatherService = () => {
   const processWeatherData = (dto: WeatherDto): Promise<WeatherResult> => {
     return Promise.resolve({
-      temporalAverage: {
-        temperature: 22,
-        windSpeed: 14,
-        precipitationPercentage: 35
-      },
-      projectionAverage: {
-        temperature: 21,
-        windSpeed: 12,
-        precipitationPercentage: 40
-      },
+      temperature: 23,
+      windSpeed: 30,
+      precipitationPercentage: 0,
       description:
-        'A calm and cloudy afternoon with a gentle breeze. Light rain may appear later, but most of the day will remain dry and cool.',
+        'Um dia agradável e ensolarado para o casamento externo, com uma brisa moderada trazendo frescor.',
       insights: [
-        'A light jacket will keep you comfortable.',
-        'Carry a small umbrella just in case.',
-        'Great weather for a walk or a coffee outdoors.',
-        'Winds are mild, perfect for a relaxed day.'
+        'Certifique-se de fixar bem as decorações e arranjos devido ao vento.',
+        'Forneça sombra para os convidados, especialmente idosos e crianças.',
+        'Aproveite o clima para atividades ao ar livre e fotos memoráveis.'
       ]
     });
 
