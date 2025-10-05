@@ -4,7 +4,7 @@ export const CONFIG = {
   },
   apis: {
     weatherApi: {
-      baseUrl: process.env.NEXT_PUBLIC_WEATHER_API_BASE_URL,
+      baseUrl: process.env.WEATHER_API_BASE_URL,
       timeout: 60_000
     }
   }

@@ -2,18 +2,16 @@
 
 import Button from '@/components/Button';
 import Card from '@/components/Card';
-import {
-  createWeatherService,
-  WeatherResult
-} from '@/services/weather.service';
+import { useToast } from '@/contexts/ToastContext';
+import { WeatherResult } from '@/types';
+import axios from 'axios';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Suspense, useEffect, useState } from 'react';
-
-const weatherService = createWeatherService();
 
 function ResultPage() {
   const router = useRouter();
   const params = useSearchParams();
+  const toast = useToast();
 
   const [weather, setWeather] = useState<WeatherResult>();
 
@@ -29,8 +27,8 @@ function ResultPage() {
       return;
     }
 
-    weatherService
-      .processWeatherData({
+    axios
+      .post('/api/weather-insights', {
         date,
         place: {
           coordinates: [parseFloat(lat), parseFloat(lon)],
@@ -38,8 +36,11 @@ function ResultPage() {
         },
         description: description ?? ''
       })
+      .then((res) => res.data)
       .then(setWeather)
-      .catch(console.error);
+      .catch(() => {
+        toast.open('Error processing data');
+      });
   }, [lat, lon, date, description, address, router]);
 
   if (!date || !lat || !lon) {
