@@ -50,6 +50,9 @@ function Home() {
           <Field.Label className="text-xs text-gray-400 uppercase tracking-wider">
             Date
           </Field.Label>
+          <Field.HelpText>
+            Choose the day of your event, activity, trip...
+          </Field.HelpText>
           <Field.Input
             type="date"
             className="bg-[#111a2d] border border-[#1c2a4b] text-gray-100 placeholder-gray-500 rounded-xl p-4 w-full focus:outline-none focus:border-[#3b82f6]"
@@ -63,8 +66,9 @@ function Home() {
           <Field.Label className="text-xs text-gray-400 uppercase tracking-wider">
             Location
           </Field.Label>
+          <Field.HelpText>Enter the place where it will happen</Field.HelpText>
           <Field.AddressAutocomplete
-            placeholder="Enter a city..."
+            placeholder="Enter a location..."
             className="bg-[#111a2d] border border-[#1c2a4b] text-gray-100 placeholder-gray-500 rounded-xl p-4 w-full focus:outline-none focus:border-[#3b82f6]"
             onAddressSelected={(place) => setLocation(place)}
             country="br"
@@ -76,6 +80,11 @@ function Home() {
           <Field.Label className="text-xs text-gray-400 uppercase tracking-wider">
             Description
           </Field.Label>
+          <Field.HelpText>
+            Briefly describe what will happen — for example: “Outdoor wedding
+            with 150 guests,” “Trip to Bonito to explore waterfalls,” or “Picnic
+            in the park with family.”
+          </Field.HelpText>
           <Field.TextArea
             placeholder="Describe your plans..."
             className="bg-[#111a2d] border border-[#1c2a4b] text-gray-100 placeholder-gray-500 rounded-xl p-4 w-full focus:outline-none focus:border-[#3b82f6]"
