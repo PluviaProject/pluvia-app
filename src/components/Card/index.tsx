@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 interface CardProps {
   children?: ReactNode | ReactNode[];
   className?: string;
-  ref?: RefObject<HTMLDivElement>;
+  ref?: RefObject<HTMLDivElement | null>;
   bgImageUrl?: string | null;
   bgColor?: string;
   onClick?: MouseEventHandler<HTMLDivElement>;
